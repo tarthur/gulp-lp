@@ -1,0 +1,94 @@
+ @import 'variables';
+ @import 'mixins';
+
+
+ 
+ /***** wrapper *****/
+.wrapper {
+  overflow: hidden;
+}
+
+/***** header *****/
+.header {
+
+}
+
+
+
+
+
+/***** footer *****/
+$footerTextColor: #e6e6e6;
+
+.footer {
+  padding: 15px 0 18px;
+  background: rgba(#000, .7);
+
+  @media (max-width: 500px) {
+    padding: 8px 0 10px;
+  }
+  
+  .items {
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    
+    @media (max-width: 1199px) {
+      margin: 0;
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .item {
+    color: $footerTextColor;
+    font: 14px/1.2 Arial;
+
+    @media (max-width: 500px) {
+      font-size: 13px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 12px;
+    }
+
+    &:nth-child(2) {
+      padding: 0 10px;
+      
+      @media (max-width: 1199px) {
+        padding: 0;
+      }
+    }
+  }
+
+  [data-remodal-target="privacy-modal"] {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    color: $footerTextColor;
+    transition: color .3s;
+
+    &:before {
+      @include pseudo;
+      height: 1px;
+      width: 100%;
+      background: $footerTextColor;
+      top: 100%;
+      left: 0;
+      transform: translateY(3px) scale(0.97);
+      background: #fff;
+      opacity: 0;
+      transition: transform .3s, background-color .3s, opacity .3s;
+    }
+
+    &:hover {
+      color: #fff;
+
+      &:before {
+        background: #fff;
+        transform: translateY(0px) scale(1.0);
+        opacity: 1;
+      }
+    }
+  }
+}

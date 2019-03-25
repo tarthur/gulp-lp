@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* ---------- libs ---------- */
+
+/* normalize
+--------------------------------*/
+@import 'normalize.css/normalize';
+
+/* video
+--------------------------------*/
+@import '_libs/video';
+
+/* animate.css
+--------------------------------*/
+// @import 'animate.css/animate.min';
+
+/* slick-carousel
+--------------------------------*/
+@import 'slick-carousel/slick/slick.scss';
+@import 'slick-carousel/slick/slick-theme.scss';
+
+/* fancyapps
+--------------------------------*/
+@import '@fancyapps/fancybox/dist/jquery.fancybox.min';
+

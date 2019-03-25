@@ -1,0 +1,33 @@
+{
+  "name": "gulp-markup-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tarthur (https://github.com/tarthur)",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-include": "^2.3.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
+    "jquery": "^3.1.1",
+    "natives": "^1.1.6",
+    "normalize.css": "^7.0.0"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "slick-carousel": "^1.8.1",
+    "@fancyapps/fancybox": "^3.2.5",
+    "object-fit-images": "^3.2.3",
+    "wowjs": "^1.1.3"
+  }
+}

@@ -1,0 +1,235 @@
+@import 'variables';
+@import 'mixins';
+
+
+.container {
+  @include container
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.responsive-iframe {
+  position: relative;
+  padding-bottom: 56.25%; /*16:9*/
+  height: 0;
+  overflow: hidden;
+  
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.timer {
+  max-width: 282px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  .time {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      box-sizing: border-box;
+      padding-bottom: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 2px;
+      color: #3258a4;
+
+      &:first-child {
+          margin-left: 0;
+      }
+    }
+
+    &-num {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        background: url(../img/timer-cell-bg.png) no-repeat 50% 50%;
+        width: 35px;
+        height: 50px;
+        text-align: center;
+        // font: 30px/45px $DINPro;
+        text-shadow: 1px 1px 1px #000;
+        color: #d4d4d4;
+      }
+    }
+
+    &-text {
+      margin-top: 2px;
+      // font: 10px $TTProstosansRegular;
+      text-transform: uppercase;
+      color: #222;
+    }
+  }
+}
+
+.privacy-modal {
+  display: none;
+  max-width: 750px;
+  padding: 50px;
+
+  @media (max-width: 767px) {
+    padding: 50px 40px;
+  }
+  
+  @media (max-width: 575px) {
+    padding: 40px 30px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  &__paragraphs {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 18px;
+    color: #333;
+  }
+}
+
+.btn {
+  @include btn; 
+
+  &_yellow {
+    @include btn_yellow;
+  }
+
+  &_block {
+    @include btn_block;
+  }
+}
+
+.h1 {
+  @include h1
+}
+
+.h2 {
+  @include h2
+}
+
+.h3 {
+  @include h3
+}
+
+.h4 {  
+  @include h4
+}
+
+.h5 {
+  @include h5
+}
+
+.h6 {
+  @include h6
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+
+  &__old {
+    display: inline-block;
+    position: relative;
+    padding: 0 3px;
+    // font: 20px/1 $NeoSansProRegular;
+    color: #000;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 3px;
+      background: #ff0000;
+    }
+  }
+
+  &__current {
+    // font: 30px/1 $NeoSansProMedium;
+    color: #005385;
+  }
+}
+
+.order-form {
+  display: flex;
+
+  input {
+    @include inputFull(#333);
+  }
+
+  // select {
+  //   &:focus {
+  //     border-color: #acacac;
+  //     color: #202020;
+  //   }
+    
+  //   @include input;
+  //   padding: 0px 20px;
+
+  //   /*for WebKit*/
+  //   -webkit-appearance: none;
+  //   /* for FF */
+  //   -moz-appearance   : none;
+  //   text-indent       : 0.01px; 
+  //   text-overflow     : '';
+  //   /* for IE */
+  //   -ms-appearance    : none;
+  //   appearance        : none !important;
+    
+  //   &::-ms-expand {
+  //     display: none;
+  //   }
+
+  //   background-image   : url('../img/select-arrow.png');
+  //   background-position: 93% 50%;
+  //   background-repeat  : no-repeat;
+  // }
+
+  button {
+    &:focus {
+      outline: none;
+    }
+
+    @include btn; 
+    // @include btn_white; 
+    @include btn_block; 
+  }
+}
+
+.tt {
+  text-transform: uppercase;
+}
+
+.wsn {
+  white-space: nowrap;
+}
+
+.tac {
+  text-align: center;
+}
+
+
+/***** hidden tmp blocks *****/
+.tmp {
+  display: none;
+}
