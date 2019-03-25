@@ -2,101 +2,19 @@
 @import 'mixins';
 
 // slick
-
 .slick-slide {
   outline: none !important;
 }
 
 
-
-// remodal
-
-.remodal-overlay {
-  background: rgba(#333, .9);
+// fancybox
+#privacy-modal {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all .3s;
 }
 
-.remodal-overlay.remodal-is-opening,
-.remodal-overlay.remodal-is-closing {
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-
-.remodal-overlay.remodal-is-opening {
-  animation-name: remodal-overlay-opening-keyframes;
-}
-
-.remodal-overlay.remodal-is-closing {
-  animation-name: remodal-overlay-closing-keyframes;
-}
-
-.remodal.remodal-is-opening,
-.remodal.remodal-is-closing {
-  animation-duration: .7s;
-  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  animation-fill-mode: forwards;
-}
-
-.remodal.remodal-is-closing {
-  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-
-.remodal.remodal-is-opening {
-  animation-name: remodal-opening-keyframes;
-  // animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.remodal.remodal-is-closing {
-  animation-name: remodal-closing-keyframes;
-}
-
-@keyframes remodal-opening-keyframes {
-  0% {
-    transform: translateY(-15vw);
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-    filter: blur(0);
-  }
-}
-
-@keyframes remodal-closing-keyframes {
-  0% {
-    transform: translateX(0px);
-    opacity: 1;
-    filter: blur(0);
-  }
-
-  100% {
-    transform: translateX(-15vw);
-    opacity: 0;
-  }
-}
-
-@keyframes remodal-overlay-opening-keyframes {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes remodal-overlay-closing-keyframes {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.remodal-wrapper.remodal-is-opening {
-  overflow-x: hidden;
-}
-
-.remodal-wrapper.remodal-is-closing {
-  overflow: hidden;
+.fancybox-slide--complete #privacy-modal {
+opacity: 1;
+transform: translateY(0);
 }

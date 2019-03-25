@@ -221,13 +221,14 @@ label {
 
 @media (max-width: 575px) {
   .privacy-modal {
-    padding: 40px 30px;
+    padding: 40px 20px;
   }
 }
 
 .privacy-modal__title {
   margin-bottom: 30px;
   font-size: 24px;
+  text-align: center;
 }
 
 .privacy-modal__paragraphs {
@@ -450,9 +451,9 @@ label {
   }
 }
 
-.footer .item {
-  color: #e6e6e6;
+.footer .item, .footer a[data-fancybox] {
   font: 14px/1.2 Arial;
+  color: #e6e6e6;
 }
 
 @media (max-width: 500px) {
@@ -477,7 +478,7 @@ label {
   }
 }
 
-.footer [data-remodal-target="privacy-modal"] {
+.footer a[data-fancybox] {
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -486,7 +487,7 @@ label {
   transition: color .3s;
 }
 
-.footer [data-remodal-target="privacy-modal"]:before {
+.footer a[data-fancybox]:before {
   content: "";
   display: block;
   position: absolute;
@@ -506,11 +507,11 @@ label {
   transition: transform .3s, background-color .3s, opacity .3s, -webkit-transform .3s;
 }
 
-.footer [data-remodal-target="privacy-modal"]:hover {
+.footer a[data-fancybox]:hover {
   color: #fff;
 }
 
-.footer [data-remodal-target="privacy-modal"]:hover:before {
+.footer a[data-fancybox]:hover:before {
   background: #fff;
   -webkit-transform: translateY(0px) scale(1);
       -ms-transform: translateY(0px) scale(1);
@@ -523,155 +524,20 @@ label {
   outline: none !important;
 }
 
-.remodal-overlay {
-  background: rgba(51, 51, 51, 0.9);
+#privacy-modal {
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-.remodal-overlay.remodal-is-opening,
-.remodal-overlay.remodal-is-closing {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.remodal-overlay.remodal-is-opening {
-  -webkit-animation-name: remodal-overlay-opening-keyframes;
-          animation-name: remodal-overlay-opening-keyframes;
-}
-
-.remodal-overlay.remodal-is-closing {
-  -webkit-animation-name: remodal-overlay-closing-keyframes;
-          animation-name: remodal-overlay-closing-keyframes;
-}
-
-.remodal.remodal-is-opening,
-.remodal.remodal-is-closing {
-  -webkit-animation-duration: .7s;
-          animation-duration: .7s;
-  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.remodal.remodal-is-closing {
-  -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-          animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-
-.remodal.remodal-is-opening {
-  -webkit-animation-name: remodal-opening-keyframes;
-          animation-name: remodal-opening-keyframes;
-}
-
-.remodal.remodal-is-closing {
-  -webkit-animation-name: remodal-closing-keyframes;
-          animation-name: remodal-closing-keyframes;
-}
-
-@-webkit-keyframes remodal-opening-keyframes {
-  0% {
-    -webkit-transform: translateY(-15vw);
-            transform: translateY(-15vw);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    -webkit-filter: blur(0);
-            filter: blur(0);
-  }
-}
-
-@keyframes remodal-opening-keyframes {
-  0% {
-    -webkit-transform: translateY(-15vw);
-            transform: translateY(-15vw);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    -webkit-filter: blur(0);
-            filter: blur(0);
-  }
-}
-
-@-webkit-keyframes remodal-closing-keyframes {
-  0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    opacity: 1;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-  }
-  100% {
-    -webkit-transform: translateX(-15vw);
-            transform: translateX(-15vw);
-    opacity: 0;
-  }
-}
-
-@keyframes remodal-closing-keyframes {
-  0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    opacity: 1;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-  }
-  100% {
-    -webkit-transform: translateX(-15vw);
-            transform: translateX(-15vw);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes remodal-overlay-opening-keyframes {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes remodal-overlay-opening-keyframes {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes remodal-overlay-closing-keyframes {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes remodal-overlay-closing-keyframes {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.remodal-wrapper.remodal-is-opening {
-  overflow-x: hidden;
-}
-
-.remodal-wrapper.remodal-is-closing {
-  overflow: hidden;
+.fancybox-slide--complete #privacy-modal {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 /* ---------- keyframes ---------- */

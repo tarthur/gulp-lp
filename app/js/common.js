@@ -57,13 +57,25 @@ $(document).ready(function(){
   });
 
   //fancybox
-  $("[data-fancybox]").fancybox({
+  $(".privacy-modal-btn").fancybox({
     loop: true,
     infobar: false,
     buttons: [
       "zoom",
       "close"
-    ],
+    ], 
+    touch: false,
+  });
+  
+  //fancybox
+  $("#slider-1 [data-fancybox]").fancybox({
+    loop: true,
+    infobar: false,
+    buttons: [
+      "zoom",
+      "close"
+    ], 
+    animationEffect: "fade",
   });
 
   // don't dragging img

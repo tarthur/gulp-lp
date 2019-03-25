@@ -1432,11 +1432,11 @@ jQuery.extend( jQuery.easing,
 
 function findVideos() {
 
-	let videos = document.querySelectorAll('.video');
+	var videos = document.querySelectorAll('.video');
 
 
 
-	for (let i = 0; i < videos.length; i++) {
+	for (var i = 0; i < videos.length; i++) {
 
 		setupVideo(videos[i]);
 
@@ -1448,19 +1448,19 @@ function findVideos() {
 
 function setupVideo(video) {
 
-	let link = video.querySelector('.video__link');
+	var link = video.querySelector('.video__link');
 
-	let media = video.querySelector('.video__media');
+	var media = video.querySelector('.video__media');
 
-	let button = video.querySelector('.video__button');
+	var button = video.querySelector('.video__button');
 
-	let id = parseMediaURL(media);
+	var id = parseMediaURL(media);
 
 
 
-	video.addEventListener('click', () => {
+	video.addEventListener('click', function () {
 
-		let iframe = createIframe(id);
+		var iframe = createIframe(id);
 
 
 
@@ -1484,11 +1484,11 @@ function setupVideo(video) {
 
 function parseMediaURL(media) {
 
-	let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+	var regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
 
-	let url = media.src;
+	var url = media.src;
 
-	let match = url.match(regexp);
+	var match = url.match(regexp);
 
 
 
@@ -1500,7 +1500,7 @@ function parseMediaURL(media) {
 
 function createIframe(id) {
 
-	let iframe = document.createElement('iframe');
+	var iframe = document.createElement('iframe');
 
 
 
@@ -1522,7 +1522,7 @@ function createIframe(id) {
 
 function generateURL(id) {
 
-	let query = '?rel=0&showinfo=0&autoplay=1';
+	var query = '?rel=0&showinfo=0&autoplay=1';
 
 
 
