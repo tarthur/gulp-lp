@@ -16,8 +16,11 @@
 
 /* slick-carousel
 --------------------------------*/
-@import 'slick-carousel/slick/slick.scss';
-@import 'slick-carousel/slick/slick-theme.scss';
+// @import 'slick-carousel/slick/slick.scss';
+// @import 'slick-carousel/slick/slick-theme.scss';
+@import '_libs/slick/slick1.8.1';
+@import '_libs/slick/slick-theme1.8.1';
+
 
 /* fancyapps
 --------------------------------*/
