@@ -130,12 +130,9 @@ label {
   max-width: 282px;
   width: 100%;
   margin: auto;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -143,11 +140,9 @@ label {
 
 .timer .time {
   position: relative;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -156,16 +151,12 @@ label {
 .timer .time-item {
   box-sizing: border-box;
   padding-bottom: 5px;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -178,15 +169,12 @@ label {
 }
 
 .timer .time-num {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -247,25 +235,27 @@ label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  padding: 0 50px;
+  padding: 22px 50px;
+  line-height: 1;
+  font-size: 16px;
+  letter-spacing: 0.08em;
   border: none;
   cursor: pointer;
   border-radius: 100px;
   color: #000;
   text-transform: uppercase;
-  -webkit-transition: color 0.15s ease-in-out, background-color .3s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color .3s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color .3s ease-in-out, box-shadow .3s;
 }
 
-.btn_yellow {
-  background: #ffcb00;
-  border: 2px solid #ffcb00;
-  box-shadow: 0 0 10px rgba(255, 203, 0, 0.16);
+.btn_orange {
+  background: #ff6000;
+  color: #fff;
+  box-shadow: 0 0 7px rgba(255, 72, 0, 0);
 }
 
-.btn_yellow:hover {
-  background: transparent;
-  color: #ffcb00;
+.btn_orange:hover {
+  background: #ff4800;
+  box-shadow: 0 0 7px #ff4800;
 }
 
 .btn_block {
@@ -275,12 +265,29 @@ label {
   padding-right: 20px;
 }
 
+.h1 {
+  font-size: 40px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #6e1969;
+}
+
+@media (max-width: 575px) {
+  .h1 {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .h1 {
+    font-size: 24px;
+  }
+}
+
 .price {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
   -webkit-align-items: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -308,7 +315,6 @@ label {
 }
 
 .order-form {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -317,33 +323,46 @@ label {
 .order-form input {
   display: inline-block;
   width: 100%;
-  height: 66px;
-  padding: 10px 20px;
-  color: #efdcaa;
-  background: #b96634;
-  border: 1px solid #7a3f1c;
+  height: 44px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 30px;
+  color: #222;
+  border: 1px solid #ff6000;
+  background: transparent;
+  transition: border .3s;
 }
 
 .order-form input::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
+  text-align: center;
   color: #333;
 }
 
 .order-form input::-moz-placeholder {
   /* Firefox 19+ */
+  text-align: center;
   opacity: 1;
   color: #333;
 }
 
 .order-form input:-ms-input-placeholder {
   /* IE 10+ */
+  text-align: center;
   color: #333;
 }
 
 .order-form input:-moz-placeholder {
   /* Firefox 18- */
+  text-align: center;
   opacity: 1;
   color: #333;
+}
+
+.order-form input:focus {
+  border-width: 2px;
 }
 
 .order-form input:focus::-webkit-input-placeholder {
@@ -377,14 +396,16 @@ label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  padding: 0 50px;
+  padding: 22px 50px;
+  line-height: 1;
+  font-size: 16px;
+  letter-spacing: 0.08em;
   border: none;
   cursor: pointer;
   border-radius: 100px;
   color: #000;
   text-transform: uppercase;
-  -webkit-transition: color 0.15s ease-in-out, background-color .3s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color .3s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color .3s ease-in-out, box-shadow .3s;
   display: block;
   width: 100%;
   padding-left: 20px;
@@ -433,11 +454,9 @@ label {
 
 .footer .items {
   margin: 0 40px;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -483,7 +502,6 @@ label {
   display: inline-block;
   position: relative;
   color: #e6e6e6;
-  -webkit-transition: color .3s;
   transition: color .3s;
 }
 
@@ -501,7 +519,6 @@ label {
           transform: translateY(3px) scale(0.97);
   background: #fff;
   opacity: 0;
-  -webkit-transition: background-color .3s, opacity .3s, -webkit-transform .3s;
   transition: background-color .3s, opacity .3s, -webkit-transform .3s;
   transition: transform .3s, background-color .3s, opacity .3s;
   transition: transform .3s, background-color .3s, opacity .3s, -webkit-transform .3s;
@@ -529,7 +546,6 @@ label {
   -webkit-transform: translateY(-50px);
       -ms-transform: translateY(-50px);
           transform: translateY(-50px);
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 

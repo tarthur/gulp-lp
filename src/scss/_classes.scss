@@ -115,8 +115,8 @@
 .btn {
   @include btn; 
 
-  &_yellow {
-    @include btn_yellow;
+  &_orange {
+    @include btn_orange;
   }
 
   &_block {

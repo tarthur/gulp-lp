@@ -7,14 +7,17 @@
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  padding: 0 50px;
-  // font: 18px/1 $NeoSansProRegular;
+  padding: 22px 50px;
+  // font-family: $Roboto-Regular;
+  line-height: 1;
+  font-size: 16px;
+  letter-spacing: 0.08em;
   border: none;
   cursor: pointer;
   border-radius: 100px;
   color: #000;
   text-transform: uppercase;
-  transition: color 0.15s ease-in-out, background-color .3s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color .3s ease-in-out, box-shadow .3s;
 }
 
 @mixin btn_block($w: 100%) {
@@ -24,14 +27,14 @@
   padding-right: 20px;
 }
 
-@mixin btn_yellow() {
-  background: #ffcb00;
-  border: 2px solid #ffcb00;
-  box-shadow: 0 0 10px rgba(#ffcb00, .16);
+@mixin btn_orange() {
+  background: #ff6000;
+  color: #fff;
+  box-shadow: 0 0 7px rgba(#ff4800, 0);
 
   &:hover {
-    background: transparent;
-    color: #ffcb00;
+    background: #ff4800;
+    box-shadow: 0 0 7px rgba(#ff4800, 1);
   }
 }
 
@@ -62,16 +65,20 @@
 
 @mixin cross-browser-input-placeholder($color) {
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    text-align: center;
     color: $color;
   }
   &::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
     opacity: 1;
     color: $color;
   }
   &:-ms-input-placeholder { /* IE 10+ */
+    text-align: center;
     color: $color;
   }
   &:-moz-placeholder { /* Firefox 18- */
+    text-align: center;
     opacity: 1;
     color: $color;
   }
@@ -107,12 +114,17 @@
 @mixin input() {
   display: inline-block;
   width: 100%;
-  height: 66px;
-  padding: 10px 20px;
-  // font: 16px/66px $RobotoLight;
-  color: #efdcaa;
-  background: #b96634;
-  border: 1px solid #7a3f1c;
+  height: 44px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+  // font-family: $Roboto-Regular;
+  border-radius: 30px;
+  color: #222;
+  border: 1px solid #ff6000;
+  background: transparent;
+  transition: border .3s;
 }
 
 @mixin inputFull($color) {
@@ -122,6 +134,7 @@
   
   &:focus {
     @include cross-browser-placeholder($color);
+    border-width: 2px; 
   }
 }
 
@@ -142,14 +155,48 @@
   justify-content: $justify-content;
 }
 
+@mixin size-box($width, $height, $bg) {
+  font-size: 100px;
+  background: url( #{$bg} ) no-repeat 0 0/contain;
+  width: $width / 100;
+  height: $height / 100;
+
+}
+
+@mixin liquid-img($width, $height) {
+  padding-bottom: $height / ($width / 100%);
+  position: relative;
+  height: 0;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: none;
+    overflow: hidden;
+  }
+}
+
 @mixin h1() {
-  // @media (max-width: 767px) {
-  //   font-size: 30px;
-  // }
+  font-size: 40px;
+  line-height: 1.15;
+  // font-family: $Roboto-Black;
+  text-transform: uppercase;
+  color: #6e1969;
+
+  @media (max-width: 575px) {
+    font-size: 6vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 24px;
+  }
 }
 
 @mixin h2() {
-
+  
 }
 
 @mixin h3() {
